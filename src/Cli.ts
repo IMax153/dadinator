@@ -1,53 +1,38 @@
 import { Command, Options, Span } from "@effect/cli"
-import { Console, Effect, Either, Option, ReadonlyArray } from "effect"
+import { Console, Effect } from "effect"
 import { DadJokeRepo } from "./DadJokeRepo.js"
 import * as Version from "./internal/version.js"
 
-const jokeId = Options.text("joke-id").pipe(
-  Options.withDescription("The identifier of the dad joke to fetch")
+const limit = Options.integer("limit").pipe(
+  Options.withAlias("l"),
+  Options.withDescription("The maximum number of dad jokes to fetch"),
+  Options.withDefault(Number.MAX_SAFE_INTEGER)
 )
-const search = Options.text("search").pipe(
-  Options.withAlias("s"),
-  Options.withDescription("The search term to use to filter dad jokes"),
-  Options.optional
-)
-const count = Options.integer("count").pipe(
-  Options.withAlias("c"),
-  Options.withDescription("The number of dad jokes to retrieve")
-)
-const options = jokeId.pipe(
-  Options.orElseEither(Options.all({ count, search })),
-  Options.optional
+const term = Options.text("term").pipe(
+  Options.withAlias("t"),
+  Options.withDescription("The search term to use to filter dad jokes")
 )
 
-const dadinator = Command.make(
-  "dadinator",
-  { options },
-  ({ options }) =>
-    DadJokeRepo.pipe(Effect.flatMap((repo) =>
-      Option.match(options, {
-        onNone: () =>
-          repo.getDadJoke(Option.none()).pipe(
-            Effect.flatMap(({ joke }) => Console.log(joke))
-          ),
-        onSome: Either.match({
-          onLeft: (jokeId) =>
-            repo.getDadJoke(Option.some(jokeId)).pipe(
-              Effect.flatMap(({ joke }) => Console.log(joke))
-            ),
-          onRight: ({ count, search }) =>
-            repo.getDadJokes(count, search).pipe(
-              Effect.flatMap((dadJokes) => {
-                const jokes = ReadonlyArray.join(
-                  ReadonlyArray.map(dadJokes, ({ joke }) => joke),
-                  "\n"
-                )
-                return Console.log(jokes)
-              })
-            )
-        })
-      })
-    ))
+const randomCommand = Command.make("random").pipe(
+  Command.withHandler(() =>
+    DadJokeRepo.pipe(
+      Effect.flatMap((repo) => repo.getRandomDadJoke()),
+      Effect.flatMap(({ joke }) => Console.log(joke))
+    )
+  )
+)
+
+const searchCommand = Command.make("search", { limit, term }).pipe(
+  Command.withHandler(({ limit, term }) =>
+    DadJokeRepo.pipe(
+      Effect.flatMap((repo) => repo.searchDadJokes(limit, term)),
+      Effect.flatMap((jokes) => Console.log(jokes.map(({ joke }) => joke).join("\n")))
+    )
+  )
+)
+
+const dadinator = Command.make("dadinator").pipe(
+  Command.withSubcommands([randomCommand, searchCommand])
 )
 
 export const run = dadinator.pipe(Command.run({
