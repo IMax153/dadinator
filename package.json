@@ -34,14 +34,14 @@
     "build": "tsup && tsx scripts/copy-package-json.ts"
   },
   "dependencies": {
-    "@effect/cli": "^0.33.11",
-    "@effect/experimental": "^0.9.13",
-    "@effect/opentelemetry": "^0.31.7",
-    "@effect/platform": "^0.45.3",
-    "@effect/platform-node": "^0.44.4",
-    "@effect/schema": "^0.62.7",
+    "@effect/cli": "^0.33.12",
+    "@effect/experimental": "^0.9.14",
+    "@effect/opentelemetry": "^0.31.8",
+    "@effect/platform": "^0.45.4",
+    "@effect/platform-node": "^0.44.5",
+    "@effect/schema": "^0.62.8",
     "dadinator": "link:",
-    "effect": "^2.3.6"
+    "effect": "^2.3.7"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.0",

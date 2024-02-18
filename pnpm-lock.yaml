@@ -6,29 +6,29 @@ settings:
 
 dependencies:
   '@effect/cli':
-    specifier: ^0.33.11
-    version: 0.33.11(@effect/platform@0.45.3)(@effect/printer-ansi@0.32.6)(@effect/printer@0.31.6)(@effect/schema@0.62.7)(effect@2.3.6)
+    specifier: ^0.33.12
+    version: 0.33.12(@effect/platform@0.45.4)(@effect/printer-ansi@0.32.7)(@effect/printer@0.31.7)(@effect/schema@0.62.8)(effect@2.3.7)
   '@effect/experimental':
-    specifier: ^0.9.13
-    version: 0.9.13(@effect/platform-node@0.44.4)(@effect/platform@0.45.3)(@effect/schema@0.62.7)(effect@2.3.6)(ws@8.16.0)
+    specifier: ^0.9.14
+    version: 0.9.14(@effect/platform-node@0.44.5)(@effect/platform@0.45.4)(@effect/schema@0.62.8)(effect@2.3.7)(ws@8.16.0)
   '@effect/opentelemetry':
-    specifier: ^0.31.7
-    version: 0.31.7(@opentelemetry/api@1.7.0)(@opentelemetry/resources@1.21.0)(@opentelemetry/semantic-conventions@1.21.0)(effect@2.3.6)
+    specifier: ^0.31.8
+    version: 0.31.8(@opentelemetry/api@1.7.0)(@opentelemetry/resources@1.21.0)(@opentelemetry/semantic-conventions@1.21.0)(effect@2.3.7)
   '@effect/platform':
-    specifier: ^0.45.3
-    version: 0.45.3(@effect/schema@0.62.7)(effect@2.3.6)
+    specifier: ^0.45.4
+    version: 0.45.4(@effect/schema@0.62.8)(effect@2.3.7)
   '@effect/platform-node':
-    specifier: ^0.44.4
-    version: 0.44.4(@effect/platform@0.45.3)(effect@2.3.6)
+    specifier: ^0.44.5
+    version: 0.44.5(@effect/platform@0.45.4)(effect@2.3.7)
   '@effect/schema':
-    specifier: ^0.62.7
-    version: 0.62.7(effect@2.3.6)(fast-check@3.15.1)
+    specifier: ^0.62.8
+    version: 0.62.8(effect@2.3.7)(fast-check@3.15.1)
   dadinator:
     specifier: 'link:'
     version: 'link:'
   effect:
-    specifier: ^2.3.6
-    version: 2.3.6
+    specifier: ^2.3.7
+    version: 2.3.7
 
 devDependencies:
   '@changesets/changelog-github':
@@ -530,20 +530,20 @@ packages:
     resolution: {integrity: sha512-rPwwm/RrFIolz6xHa8Kzpshuwpe+xu/XcEw9iUmRF2tnyIwxxaW7XoFKaQ+GfPju81cKpH4vJeq7/2IizKvyjg==}
     dev: true
 
-  /@effect/cli@0.33.11(@effect/platform@0.45.3)(@effect/printer-ansi@0.32.6)(@effect/printer@0.31.6)(@effect/schema@0.62.7)(effect@2.3.6):
-    resolution: {integrity: sha512-Cg26rvNqjGEblaGKbJSOTkfhFPqshzaxHZ0JV5y7KSa7naLRjYk0igNH63zhkuhN386NzfYGN5ePjqXNjRUYvg==}
+  /@effect/cli@0.33.12(@effect/platform@0.45.4)(@effect/printer-ansi@0.32.7)(@effect/printer@0.31.7)(@effect/schema@0.62.8)(effect@2.3.7):
+    resolution: {integrity: sha512-PEbKIfnOJxAdpcVqIDDmIVuNeGODhxD+VaHTYcDw3Ku2amDoszbuLJU02PCo5CgZ3Lgx7AXmWohuR9ZLqd5uNg==}
     peerDependencies:
-      '@effect/platform': ^0.45.3
-      '@effect/printer': ^0.31.6
-      '@effect/printer-ansi': ^0.32.6
-      '@effect/schema': ^0.62.7
-      effect: ^2.3.6
+      '@effect/platform': ^0.45.4
+      '@effect/printer': ^0.31.7
+      '@effect/printer-ansi': ^0.32.7
+      '@effect/schema': ^0.62.8
+      effect: ^2.3.7
     dependencies:
-      '@effect/platform': 0.45.3(@effect/schema@0.62.7)(effect@2.3.6)
-      '@effect/printer': 0.31.6(@effect/typeclass@0.22.21)(effect@2.3.6)
-      '@effect/printer-ansi': 0.32.6(@effect/typeclass@0.22.21)(effect@2.3.6)
-      '@effect/schema': 0.62.7(effect@2.3.6)(fast-check@3.15.1)
-      effect: 2.3.6
+      '@effect/platform': 0.45.4(@effect/schema@0.62.8)(effect@2.3.7)
+      '@effect/printer': 0.31.7(@effect/typeclass@0.22.22)(effect@2.3.7)
+      '@effect/printer-ansi': 0.32.7(@effect/typeclass@0.22.22)(effect@2.3.7)
+      '@effect/schema': 0.62.8(effect@2.3.7)(fast-check@3.15.1)
+      effect: 2.3.7
       ini: 4.1.1
       toml: 3.0.0
       yaml: 2.3.4
@@ -557,13 +557,13 @@ packages:
       diff: 5.1.0
     dev: true
 
-  /@effect/experimental@0.9.13(@effect/platform-node@0.44.4)(@effect/platform@0.45.3)(@effect/schema@0.62.7)(effect@2.3.6)(ws@8.16.0):
-    resolution: {integrity: sha512-/ZfdnD7MX+Ka6f029ZtJRUTcMXj3lcEMaCRt90AdxH9hti5d8xIC0RBNh5kW99uxCBuU/M2ghY3P0hmzAUqevg==}
+  /@effect/experimental@0.9.14(@effect/platform-node@0.44.5)(@effect/platform@0.45.4)(@effect/schema@0.62.8)(effect@2.3.7)(ws@8.16.0):
+    resolution: {integrity: sha512-oa29Iy9BUJXRjEpPCTmY15WMhG/hp5WlDOYZSsAcLnlQWR61dAfny1QOOtQ3NXhvoKgwlxKJJtg8LvMTKeoHOg==}
     peerDependencies:
-      '@effect/platform': ^0.45.3
-      '@effect/platform-node': ^0.44.4
-      '@effect/schema': ^0.62.7
-      effect: ^2.3.6
+      '@effect/platform': ^0.45.4
+      '@effect/platform-node': ^0.44.5
+      '@effect/schema': ^0.62.8
+      effect: ^2.3.7
       lmdb: ^2.9.2
       ws: ^8.14
     peerDependenciesMeta:
@@ -574,10 +574,10 @@ packages:
       ws:
         optional: true
     dependencies:
-      '@effect/platform': 0.45.3(@effect/schema@0.62.7)(effect@2.3.6)
-      '@effect/platform-node': 0.44.4(@effect/platform@0.45.3)(effect@2.3.6)
-      '@effect/schema': 0.62.7(effect@2.3.6)(fast-check@3.15.1)
-      effect: 2.3.6
+      '@effect/platform': 0.45.4(@effect/schema@0.62.8)(effect@2.3.7)
+      '@effect/platform-node': 0.44.5(@effect/platform@0.45.4)(effect@2.3.7)
+      '@effect/schema': 0.62.8(effect@2.3.7)(fast-check@3.15.1)
+      effect: 2.3.7
       isomorphic-ws: 5.0.0(ws@8.16.0)
       msgpackr: 1.10.1
       ws: 8.16.0
@@ -587,8 +587,8 @@ packages:
     resolution: {integrity: sha512-BnlM8LlaqCAYgdRfxlbR7gXGh/FD1scL1fPgNVJEPoOM08od1jtJz+iKhwfaud8TPnnhZR+TED2h5ynjanLeCQ==}
     dev: true
 
-  /@effect/opentelemetry@0.31.7(@opentelemetry/api@1.7.0)(@opentelemetry/resources@1.21.0)(@opentelemetry/semantic-conventions@1.21.0)(effect@2.3.6):
-    resolution: {integrity: sha512-fUDj6SX+IVrsltbR0OEtmYsrGGzLVDvpaTlKsHvA/G8mtJW/yFa20MDDm2llPNcHACR9Grg2Ri75FR2Op4xU3g==}
+  /@effect/opentelemetry@0.31.8(@opentelemetry/api@1.7.0)(@opentelemetry/resources@1.21.0)(@opentelemetry/semantic-conventions@1.21.0)(effect@2.3.7):
+    resolution: {integrity: sha512-nDqYNsE69lCPE/erVkoByN9zHadh9dj/G730EGQJy/Eifh7PARJEHHHUpU+A3gzWd7B1QrOrbgrJZphx/mYGmg==}
     peerDependencies:
       '@opentelemetry/api': ^1.6
       '@opentelemetry/resources': ^1.17
@@ -597,7 +597,7 @@ packages:
       '@opentelemetry/sdk-trace-node': ^1.17
       '@opentelemetry/sdk-trace-web': ^1.17
       '@opentelemetry/semantic-conventions': ^1.17
-      effect: ^2.3.6
+      effect: ^2.3.7
     peerDependenciesMeta:
       '@opentelemetry/sdk-metrics':
         optional: true
@@ -611,82 +611,82 @@ packages:
       '@opentelemetry/api': 1.7.0
       '@opentelemetry/resources': 1.21.0(@opentelemetry/api@1.7.0)
       '@opentelemetry/semantic-conventions': 1.21.0
-      effect: 2.3.6
+      effect: 2.3.7
     dev: false
 
-  /@effect/platform-node-shared@0.1.11(@effect/platform@0.45.3)(effect@2.3.6):
-    resolution: {integrity: sha512-+87/biebOBH7Iq79M5+j0R3mvwFr5kBnqwv0zUdAfHSJgus/DjASPgudqEikZJ/nM7FEgOoFsFtDPRAm7P3mrA==}
+  /@effect/platform-node-shared@0.1.12(@effect/platform@0.45.4)(effect@2.3.7):
+    resolution: {integrity: sha512-lTdkvf+apmfq8pda+sC8kdTshWN9xeDgybHnsdMK2Ri5c5ORvvvVZlEdC7rbVeAs+iulM7IXLMq9wfmKGH4IHg==}
     peerDependencies:
-      '@effect/platform': ^0.45.3
-      effect: ^2.3.6
+      '@effect/platform': ^0.45.4
+      effect: ^2.3.7
     dependencies:
-      '@effect/platform': 0.45.3(@effect/schema@0.62.7)(effect@2.3.6)
-      effect: 2.3.6
+      '@effect/platform': 0.45.4(@effect/schema@0.62.8)(effect@2.3.7)
+      effect: 2.3.7
       multipasta: 0.1.21
     dev: false
 
-  /@effect/platform-node@0.44.4(@effect/platform@0.45.3)(effect@2.3.6):
-    resolution: {integrity: sha512-5fgDCNGnWLPc98pfUstwReFYaAcUp6Ag7IYLQV9t1c0G/sHt04/wWgjG3DO667k8aYzie3tyhPaT37moJ3guKQ==}
+  /@effect/platform-node@0.44.5(@effect/platform@0.45.4)(effect@2.3.7):
+    resolution: {integrity: sha512-zWIy1AhALVLcnhrhWyrniCduTRiQ/qyfT0TGWFnYbJJsnCScMWKcEWDxbf4D/DhhNIXJPx3aQSpnqrZGLJNQWg==}
     peerDependencies:
-      '@effect/platform': ^0.45.3
-      effect: ^2.3.6
+      '@effect/platform': ^0.45.4
+      effect: ^2.3.7
     dependencies:
-      '@effect/platform': 0.45.3(@effect/schema@0.62.7)(effect@2.3.6)
-      '@effect/platform-node-shared': 0.1.11(@effect/platform@0.45.3)(effect@2.3.6)
-      effect: 2.3.6
+      '@effect/platform': 0.45.4(@effect/schema@0.62.8)(effect@2.3.7)
+      '@effect/platform-node-shared': 0.1.12(@effect/platform@0.45.4)(effect@2.3.7)
+      effect: 2.3.7
       mime: 3.0.0
     dev: false
 
-  /@effect/platform@0.45.3(@effect/schema@0.62.7)(effect@2.3.6):
-    resolution: {integrity: sha512-qVginaqVdtKN+OKbGrlAiDGzvO6V1keVFLnjUY4M+YUTmgCVo68Z4OsCKMvD+fwKR5HaqFPqKnZNh+LvlIfW8g==}
+  /@effect/platform@0.45.4(@effect/schema@0.62.8)(effect@2.3.7):
+    resolution: {integrity: sha512-LJ72oJZ1+228SHj5bNgQ/8U0doHADQhy+qJwpo4VnjRHjwwD1ObatLTRuQP9aALRasf/28vIKZbmIAkaC2+o5g==}
     peerDependencies:
-      '@effect/schema': ^0.62.7
-      effect: ^2.3.6
+      '@effect/schema': ^0.62.8
+      effect: ^2.3.7
     dependencies:
-      '@effect/schema': 0.62.7(effect@2.3.6)(fast-check@3.15.1)
-      effect: 2.3.6
+      '@effect/schema': 0.62.8(effect@2.3.7)(fast-check@3.15.1)
+      effect: 2.3.7
       find-my-way-ts: 0.1.1
       multipasta: 0.1.21
       path-browserify: 1.0.1
     dev: false
 
-  /@effect/printer-ansi@0.32.6(@effect/typeclass@0.22.21)(effect@2.3.6):
-    resolution: {integrity: sha512-Jt+5sN4k/H4sQHQOBWkIfltI84WkaNG1AHQ3WXWTNkv3sBea89FaornqY3lKOw0jJHVbuoS2+BWLrZT3p4TnFg==}
+  /@effect/printer-ansi@0.32.7(@effect/typeclass@0.22.22)(effect@2.3.7):
+    resolution: {integrity: sha512-7O0Sah8B/AxewVxV/TKAoMvBmsicZFVf9iL0CkV1ZnRZdREzTzX3oGnjcEnZ4/hG6+AwlLmvUz4iHxyx+WkDzA==}
     peerDependencies:
-      '@effect/typeclass': ^0.22.21
-      effect: ^2.3.6
+      '@effect/typeclass': ^0.22.22
+      effect: ^2.3.7
     dependencies:
-      '@effect/printer': 0.31.6(@effect/typeclass@0.22.21)(effect@2.3.6)
-      '@effect/typeclass': 0.22.21(effect@2.3.6)
-      effect: 2.3.6
+      '@effect/printer': 0.31.7(@effect/typeclass@0.22.22)(effect@2.3.7)
+      '@effect/typeclass': 0.22.22(effect@2.3.7)
+      effect: 2.3.7
     dev: false
 
-  /@effect/printer@0.31.6(@effect/typeclass@0.22.21)(effect@2.3.6):
-    resolution: {integrity: sha512-d+1aLrMLk6zSSAnLBA5NHnTNXIIchK81kGKaaGl5iGCv+DWP6T9/QsO9prg1Flx79FoFkN4H/W6ZkUOpyJDzCg==}
+  /@effect/printer@0.31.7(@effect/typeclass@0.22.22)(effect@2.3.7):
+    resolution: {integrity: sha512-fvVGPSaBz4kP5/k63GkqrB1To6A+5cL93f1f+vKUzj6YJpNth3an7VxECtigcvUboDvFKRgwUy/zXyAGkaK7uA==}
     peerDependencies:
-      '@effect/typeclass': ^0.22.21
-      effect: ^2.3.6
+      '@effect/typeclass': ^0.22.22
+      effect: ^2.3.7
     dependencies:
-      '@effect/typeclass': 0.22.21(effect@2.3.6)
-      effect: 2.3.6
+      '@effect/typeclass': 0.22.22(effect@2.3.7)
+      effect: 2.3.7
     dev: false
 
-  /@effect/schema@0.62.7(effect@2.3.6)(fast-check@3.15.1):
-    resolution: {integrity: sha512-AGrnQDC0hw5VknesZm4zGjY7EkgKwp+5kzMcFlna96MFLaGOGinZiZeldGep7ByNWsa4Bbz9BfEQcr/knqJpjw==}
+  /@effect/schema@0.62.8(effect@2.3.7)(fast-check@3.15.1):
+    resolution: {integrity: sha512-YlJlE8GPd/egQ+3msrHcDVipApMMVnb4Ln88pMyjnCS8jEaHja72vbv0j/ViCNOSWpGlraV39ME+SNVDuS8ePg==}
     peerDependencies:
-      effect: ^2.3.6
+      effect: ^2.3.7
       fast-check: ^3.13.2
     dependencies:
-      effect: 2.3.6
+      effect: 2.3.7
       fast-check: 3.15.1
     dev: false
 
-  /@effect/typeclass@0.22.21(effect@2.3.6):
-    resolution: {integrity: sha512-hhX6hDwMN4AF1hMqsscUucNH5iQzQaZ39Vo1Npf3MMedxirkeIxBM8E0pUKjfjxvhCSvjbPStFQBFns7qfsNyQ==}
+  /@effect/typeclass@0.22.22(effect@2.3.7):
+    resolution: {integrity: sha512-QBDVdaOpEGmZ0JIxVQTfYCijbZAJZJmgFJKG4KHKJ5T5OMC9SyGSCmnNAC3FfePi0eXvu0S+tAeWTnht2A0veQ==}
     peerDependencies:
-      effect: ^2.3.6
+      effect: ^2.3.7
     dependencies:
-      effect: 2.3.6
+      effect: 2.3.7
     dev: false
 
   /@esbuild/aix-ppc64@0.19.12:
@@ -2234,8 +2234,8 @@ packages:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: true
 
-  /effect@2.3.6:
-    resolution: {integrity: sha512-R7Sqjc/6Wg+hZbtotklWunLUe5hoEG/a8SP/4BGydNCbR2DZuc15ZApoZA1gVMcT/PDMN3WHEiVlqLkt+TtdBA==}
+  /effect@2.3.7:
+    resolution: {integrity: sha512-hFiMy3mX7h0AlCjzZjZCnVlJD6SBePBmkg9IKUAiEEzmH68z0ZBVtiwNhukmaEWxgDSG20lxA1M4Bi1yR3pkhQ==}
     dev: false
 
   /electron-to-chromium@1.4.661:

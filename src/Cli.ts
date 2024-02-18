@@ -13,6 +13,10 @@ const term = Args.text({ name: "term" }).pipe(
 )
 
 const searchCommand = Command.make("search", { limit, term }).pipe(
+  Command.withDescription(
+    "Search the icanhazdadjoke API for dad jokes matching "
+      + "the specified term"
+  ),
   Command.withHandler(({ limit, term }) =>
     DadJokeRepo.pipe(
       Effect.flatMap((repo) => repo.searchDadJokes(limit, term)),
@@ -22,6 +26,7 @@ const searchCommand = Command.make("search", { limit, term }).pipe(
 )
 
 const randomCommand = Command.make("random").pipe(
+  Command.withDescription("Fetch a random dad joke from the icanhazdadjoke API"),
   Command.withHandler(() =>
     DadJokeRepo.pipe(
       Effect.flatMap((repo) => repo.getRandomDadJoke()),
