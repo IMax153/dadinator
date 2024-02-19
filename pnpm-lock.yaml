@@ -6,20 +6,20 @@ settings:
 
 dependencies:
   '@effect/cli':
-    specifier: ^0.33.12
-    version: 0.33.12(@effect/platform@0.45.4)(@effect/printer-ansi@0.32.7)(@effect/printer@0.31.7)(@effect/schema@0.62.8)(effect@2.3.7)
+    specifier: ^0.33.13
+    version: 0.33.13(@effect/platform@0.45.5)(@effect/printer-ansi@0.32.7)(@effect/printer@0.31.7)(@effect/schema@0.62.8)(effect@2.3.7)
   '@effect/experimental':
-    specifier: ^0.9.14
-    version: 0.9.14(@effect/platform-node@0.44.5)(@effect/platform@0.45.4)(@effect/schema@0.62.8)(effect@2.3.7)(ws@8.16.0)
+    specifier: ^0.9.15
+    version: 0.9.15(@effect/platform-node@0.44.6)(@effect/platform@0.45.5)(@effect/schema@0.62.8)(effect@2.3.7)(ws@8.16.0)
   '@effect/opentelemetry':
     specifier: ^0.31.8
     version: 0.31.8(@opentelemetry/api@1.7.0)(@opentelemetry/resources@1.21.0)(@opentelemetry/semantic-conventions@1.21.0)(effect@2.3.7)
   '@effect/platform':
-    specifier: ^0.45.4
-    version: 0.45.4(@effect/schema@0.62.8)(effect@2.3.7)
+    specifier: ^0.45.5
+    version: 0.45.5(@effect/schema@0.62.8)(effect@2.3.7)
   '@effect/platform-node':
-    specifier: ^0.44.5
-    version: 0.44.5(@effect/platform@0.45.4)(effect@2.3.7)
+    specifier: ^0.44.6
+    version: 0.44.6(@effect/platform@0.45.5)(effect@2.3.7)
   '@effect/schema':
     specifier: ^0.62.8
     version: 0.62.8(effect@2.3.7)(fast-check@3.15.1)
@@ -530,16 +530,16 @@ packages:
     resolution: {integrity: sha512-rPwwm/RrFIolz6xHa8Kzpshuwpe+xu/XcEw9iUmRF2tnyIwxxaW7XoFKaQ+GfPju81cKpH4vJeq7/2IizKvyjg==}
     dev: true
 
-  /@effect/cli@0.33.12(@effect/platform@0.45.4)(@effect/printer-ansi@0.32.7)(@effect/printer@0.31.7)(@effect/schema@0.62.8)(effect@2.3.7):
-    resolution: {integrity: sha512-PEbKIfnOJxAdpcVqIDDmIVuNeGODhxD+VaHTYcDw3Ku2amDoszbuLJU02PCo5CgZ3Lgx7AXmWohuR9ZLqd5uNg==}
+  /@effect/cli@0.33.13(@effect/platform@0.45.5)(@effect/printer-ansi@0.32.7)(@effect/printer@0.31.7)(@effect/schema@0.62.8)(effect@2.3.7):
+    resolution: {integrity: sha512-j2OoL3Au9/5Oo1bQZ1eq7AkiVicchkO4x3H3cTyMmQtFVhb+F3+jMkgx+laN8/1w5//xxqYwdHTiLiDLHADugQ==}
     peerDependencies:
-      '@effect/platform': ^0.45.4
+      '@effect/platform': ^0.45.5
       '@effect/printer': ^0.31.7
       '@effect/printer-ansi': ^0.32.7
       '@effect/schema': ^0.62.8
       effect: ^2.3.7
     dependencies:
-      '@effect/platform': 0.45.4(@effect/schema@0.62.8)(effect@2.3.7)
+      '@effect/platform': 0.45.5(@effect/schema@0.62.8)(effect@2.3.7)
       '@effect/printer': 0.31.7(@effect/typeclass@0.22.22)(effect@2.3.7)
       '@effect/printer-ansi': 0.32.7(@effect/typeclass@0.22.22)(effect@2.3.7)
       '@effect/schema': 0.62.8(effect@2.3.7)(fast-check@3.15.1)
@@ -557,11 +557,11 @@ packages:
       diff: 5.1.0
     dev: true
 
-  /@effect/experimental@0.9.14(@effect/platform-node@0.44.5)(@effect/platform@0.45.4)(@effect/schema@0.62.8)(effect@2.3.7)(ws@8.16.0):
-    resolution: {integrity: sha512-oa29Iy9BUJXRjEpPCTmY15WMhG/hp5WlDOYZSsAcLnlQWR61dAfny1QOOtQ3NXhvoKgwlxKJJtg8LvMTKeoHOg==}
+  /@effect/experimental@0.9.15(@effect/platform-node@0.44.6)(@effect/platform@0.45.5)(@effect/schema@0.62.8)(effect@2.3.7)(ws@8.16.0):
+    resolution: {integrity: sha512-ffKGDeAb5HZmFtdxfBXzkUarxoq4+Blada/yzLXRK1WIi5sfhtZIUqwwucMUyaFrcwV2kc/gD+ToOIut/ABJiQ==}
     peerDependencies:
-      '@effect/platform': ^0.45.4
-      '@effect/platform-node': ^0.44.5
+      '@effect/platform': ^0.45.5
+      '@effect/platform-node': ^0.44.6
       '@effect/schema': ^0.62.8
       effect: ^2.3.7
       lmdb: ^2.9.2
@@ -574,8 +574,8 @@ packages:
       ws:
         optional: true
     dependencies:
-      '@effect/platform': 0.45.4(@effect/schema@0.62.8)(effect@2.3.7)
-      '@effect/platform-node': 0.44.5(@effect/platform@0.45.4)(effect@2.3.7)
+      '@effect/platform': 0.45.5(@effect/schema@0.62.8)(effect@2.3.7)
+      '@effect/platform-node': 0.44.6(@effect/platform@0.45.5)(effect@2.3.7)
       '@effect/schema': 0.62.8(effect@2.3.7)(fast-check@3.15.1)
       effect: 2.3.7
       isomorphic-ws: 5.0.0(ws@8.16.0)
@@ -614,31 +614,31 @@ packages:
       effect: 2.3.7
     dev: false
 
-  /@effect/platform-node-shared@0.1.12(@effect/platform@0.45.4)(effect@2.3.7):
-    resolution: {integrity: sha512-lTdkvf+apmfq8pda+sC8kdTshWN9xeDgybHnsdMK2Ri5c5ORvvvVZlEdC7rbVeAs+iulM7IXLMq9wfmKGH4IHg==}
+  /@effect/platform-node-shared@0.1.13(@effect/platform@0.45.5)(effect@2.3.7):
+    resolution: {integrity: sha512-QSLN4IO34J7e7zTRiCgyrdQABYKykozbMA2itvrpGQ+8/A+c258UwxGCPuJErOWF+SJ9IOWleZfuTTLG+Rszgw==}
     peerDependencies:
-      '@effect/platform': ^0.45.4
+      '@effect/platform': ^0.45.5
       effect: ^2.3.7
     dependencies:
-      '@effect/platform': 0.45.4(@effect/schema@0.62.8)(effect@2.3.7)
+      '@effect/platform': 0.45.5(@effect/schema@0.62.8)(effect@2.3.7)
       effect: 2.3.7
       multipasta: 0.1.21
     dev: false
 
-  /@effect/platform-node@0.44.5(@effect/platform@0.45.4)(effect@2.3.7):
-    resolution: {integrity: sha512-zWIy1AhALVLcnhrhWyrniCduTRiQ/qyfT0TGWFnYbJJsnCScMWKcEWDxbf4D/DhhNIXJPx3aQSpnqrZGLJNQWg==}
+  /@effect/platform-node@0.44.6(@effect/platform@0.45.5)(effect@2.3.7):
+    resolution: {integrity: sha512-xEk3Ez9Qo/iQ+7dOozMrhVH5HCg8bBa7+//l6PM7tOUmXLJ0VVTAjwSi9+0enX5imsRjkyhEDSEIiwwbA4gbBA==}
     peerDependencies:
-      '@effect/platform': ^0.45.4
+      '@effect/platform': ^0.45.5
       effect: ^2.3.7
     dependencies:
-      '@effect/platform': 0.45.4(@effect/schema@0.62.8)(effect@2.3.7)
-      '@effect/platform-node-shared': 0.1.12(@effect/platform@0.45.4)(effect@2.3.7)
+      '@effect/platform': 0.45.5(@effect/schema@0.62.8)(effect@2.3.7)
+      '@effect/platform-node-shared': 0.1.13(@effect/platform@0.45.5)(effect@2.3.7)
       effect: 2.3.7
       mime: 3.0.0
     dev: false
 
-  /@effect/platform@0.45.4(@effect/schema@0.62.8)(effect@2.3.7):
-    resolution: {integrity: sha512-LJ72oJZ1+228SHj5bNgQ/8U0doHADQhy+qJwpo4VnjRHjwwD1ObatLTRuQP9aALRasf/28vIKZbmIAkaC2+o5g==}
+  /@effect/platform@0.45.5(@effect/schema@0.62.8)(effect@2.3.7):
+    resolution: {integrity: sha512-2f9Abx5zGLg+lYmX1r93ltnKJxWm1qCi86lJep3MSYqbG3jprP7RDiSjUsiUpIh0RNK/vOcy8Q+U85pvQHRo1A==}
     peerDependencies:
       '@effect/schema': ^0.62.8
       effect: ^2.3.7
