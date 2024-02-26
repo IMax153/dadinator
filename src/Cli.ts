@@ -1,6 +1,6 @@
 import { Args, Command, Options, Span } from "@effect/cli"
+import { Command as Cmd, CommandExecutor } from "@effect/platform"
 import { Console, Effect } from "effect"
-import { CommandExecutor, Command as Cmd } from "@effect/platform"
 import { DadJokeRepo } from "./DadJokeRepo.js"
 import * as Version from "./internal/version.js"
 
@@ -21,17 +21,24 @@ const searchCommand = Command.make("search", { limit, term }).pipe(
   Command.withHandler(({ limit, term }) =>
     DadJokeRepo.pipe(
       Effect.andThen((repo) => repo.searchDadJokes(limit, term)),
-      Effect.andThen((jokes) => Effect.gen(function* ($) {
-        const exec = yield* $(CommandExecutor.CommandExecutor)
-        for (const joke of jokes) {
-          yield* $(Effect.all([
-            exec.exitCode(Cmd.make("say", `Ok daddy, do you know this one yet? ${joke}`)),
-            Console.log(joke)
-          ], {
-            concurrency: 'unbounded'
-          }))
-        }
-      }))
+      Effect.andThen((jokes) =>
+        Effect.gen(function*(_) {
+          const executor = yield* _(CommandExecutor.CommandExecutor)
+          yield* _(
+            executor.exitCode(
+              Cmd.make("say", "-v", "Grandpa", "Ok daddy, have you heard these ones before?")
+            )
+          )
+          for (const { joke } of jokes) {
+            yield* _(Effect.all([
+              executor.exitCode(Cmd.make("say", "-v", "Grandpa", `${joke}`)),
+              Console.log(joke)
+            ], {
+              concurrency: "unbounded"
+            }))
+          }
+        })
+      )
     )
   )
 )
@@ -41,15 +48,19 @@ const randomCommand = Command.make("random").pipe(
   Command.withHandler(() =>
     DadJokeRepo.pipe(
       Effect.andThen((repo) => repo.getRandomDadJoke()),
-      Effect.andThen(({ joke }) => Effect.gen(function* ($) {
-        const exec = yield* $(CommandExecutor.CommandExecutor)
-        yield* $(Effect.all([
-          exec.exitCode(Cmd.make("say", `Ok daddy, do you know this one yet? ${joke}`)),
-          Console.log(joke)
-        ], {
-          concurrency: 'unbounded'
-        }))
-      }))
+      Effect.andThen(({ joke }) =>
+        Effect.gen(function*(_) {
+          const executor = yield* _(CommandExecutor.CommandExecutor)
+          yield* _(Effect.all([
+            executor.exitCode(
+              Cmd.make("say", "-v", "Grandpa", `Ok daddy, do you know this one yet? ${joke}`)
+            ),
+            Console.log(joke)
+          ], {
+            concurrency: "unbounded"
+          }))
+        })
+      )
     )
   )
 )
