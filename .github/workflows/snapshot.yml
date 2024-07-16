@@ -82,7 +82,11 @@ jobs:
         run: |
           snapshots=$(pnpm pkg-pr-new publish --comment=off)
           echo "${snapshots}"
-          snapshots=$(echo "${snapshots}" | awk '/⚡️ Your npm packages are published./ {found=1; next} found {sub(/npm i/, "pnpm add"); print}')
+          snapshots=$(echo "${snapshots}" | awk '
+            /⚡️ Your npm packages are published./ \
+            { found=1; next } found \
+            { sub(/npm i/, "pnpm add"); print "\"" $0 "\"" }
+          ' | paste -sd ',')
           echo "snapshots=[$output]" >> $GITHUB_OUTPUT
 
       - name: Update comment (success)
