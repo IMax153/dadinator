@@ -1,51 +1,53 @@
 name: Snapshot
-on: [push, pull_request]
 
+on:
+  issue_comment:
+    types: [created]
 
 jobs:
   snapshot:
     name: Snapshot
-    # if: ${{ github.event.issue.pull_request && startsWith(github.event.comment.body, '/snapshot') }}
+    if: ${{ github.event.issue.pull_request && startsWith(github.event.comment.body, '/snapshot') }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    # permissions:
-    #   id-token: write
-    #   pull-requests: write
+    permissions:
+      id-token: write
+      pull-requests: write
     steps:
-      # - name: Enforce permission requirement
-      #   uses: prince-chrismc/check-actor-permissions-action@v3
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     permission: write
+      - name: Enforce permission requirement
+        uses: prince-chrismc/check-actor-permissions-action@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          permission: write
 
-      # - name: Extract snapshot command
-      #   id: command
-      #   env:
-      #     COMMENT: ${{ github.event.comment.body }}
-      #   run: |
-      #     if [[ $COMMENT == "/snapshot" ]]; then
-      #       snapshot="${BASH_REMATCH[2]:-snapshot}"
-      #       echo "snapshot=$snapshot" >> $GITHUB_OUTPUT
-      #     else
-      #       exit 1
-      #     fi
+      - name: Extract snapshot command
+        id: command
+        env:
+          COMMENT: ${{ github.event.comment.body }}
+        run: |
+          if [[ $COMMENT == "/snapshot" ]]; then
+            snapshot="${BASH_REMATCH[2]:-snapshot}"
+            echo "snapshot=$snapshot" >> $GITHUB_OUTPUT
+          else
+            exit 1
+          fi
 
       - name: Checkout default branch
         uses: actions/checkout@v4
 
-      # - name: Checkout pull request branch
-      #   run: gh pr checkout ${{ github.event.issue.number }}
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checkout pull request branch
+        run: gh pr checkout ${{ github.event.issue.number }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # - name: Get current branch name
-      #   id: branch
-      #   run: echo "branch=$(git branch --show-current)" >> $GITHUB_OUTPUT
+      - name: Get current branch name
+        id: branch
+        run: echo "branch=$(git branch --show-current)" >> $GITHUB_OUTPUT
 
-      # - name: Retrieve changeset entries
-      #   if: ${{ steps.branch.outputs.branch == 'changeset-release/main' }}
-      #   run: git checkout origin/main
+      - name: Retrieve changeset entries
+        if: ${{ steps.branch.outputs.branch == 'changeset-release/main' }}
+        run: git checkout origin/main
 
       - name: Install pnpm
         uses: pnpm/action-setup@v3
@@ -63,5 +65,17 @@ jobs:
       - name: Build snapshot
         run: pnpm build
 
+      - name: Delete the snapshot comment
+        uses: actions/github-script@v7
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          script: |
+            await github.rest.issues.deleteComment({
+              comment_id: ${{ steps.comment.outputs.comment-id }},
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            })
+
       - name: Create snapshot
-        run: pnpm pkg-pr-new publish --comment=create
+        run: pnpm pkg-pr-new publish
