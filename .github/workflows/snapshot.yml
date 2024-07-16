@@ -25,7 +25,7 @@ jobs:
         env:
           COMMENT: ${{ github.event.comment.body }}
         run: |
-          if [[ $COMMENT -eq "/snapshot" ]]; then
+          if [[ $COMMENT == "/snapshot" ]]; then
             snapshot="${BASH_REMATCH[2]:-snapshot}"
             echo "snapshot=$snapshot" >> $GITHUB_OUTPUT
           else
