@@ -81,6 +81,7 @@ jobs:
         id: snapshot
         run: |
           snapshots=$(pnpm pkg-pr-new publish --comment=off)
+          echo "${snapshots}"
           snapshots=$(echo "${snapshots}" | awk '/⚡️ Your npm packages are published./ {found=1; next} found {sub(/npm i/, "pnpm add"); print}')
           echo "snapshots=[$output]" >> $GITHUB_OUTPUT
 
